@@ -4,7 +4,7 @@ import { BookOpen, Users, Award } from "lucide-react"
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-20 bg-background">
+    <section id="method" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">

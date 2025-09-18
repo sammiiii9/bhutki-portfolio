@@ -4,7 +4,7 @@ import { MapPin, Heart } from "lucide-react"
 
 export default function CareSection() {
   return (
-    <section id="care" className="py-20 relative overflow-hidden" style={{
+    <section id="programs" className="py-20 relative overflow-hidden" style={{
       background: 'linear-gradient(135deg, #f5dfdd 0%, #fdf2f8 50%, #ffffff 100%)'
     }}>
       {/* Decorative angled elements */}
@@ -25,28 +25,27 @@ export default function CareSection() {
 
           <div className="space-y-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight text-balance">
-              Care at the Youth Mind Institute
+              Structured Literacy Programs
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our clinicians provide gold-standard, evidence-based treatment to thousands of kids annually through our
-              clinical centers and in-school programs.
+              Our certified specialists provide personalized Orton-Gillingham based literacy instruction combined with 
+              Six Bricks methodology for children aged 4-14, focusing on reading clarity and confidence building.
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-emerald-600" />
-                <span className="text-gray-700">Clinical centers in New York City & San Francisco Bay Area</span>
+                <span className="text-gray-700">Online 1:1 sessions with certified OG specialists</span>
               </div>
               <div className="flex items-center gap-3">
                 <Heart className="w-5 h-5 text-pink-500" />
-                <span className="text-gray-700">Supported by fees for service, with financial aid available</span>
+                <span className="text-gray-700">Personalized learning plans with parent coaching support</span>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90">Book Appointment</Button>
-              <Button variant="outline">Learn More About Care</Button>
+              <Button variant="outline">Learn More About Our Programs</Button>
             </div>
           </div>
         </div>

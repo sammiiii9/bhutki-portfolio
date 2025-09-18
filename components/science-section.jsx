@@ -3,7 +3,7 @@ import { Microscope, Brain, Zap } from "lucide-react"
 
 export default function ScienceSection() {
   return (
-    <section id="science" className="py-20 bg-muted/30">
+    <section id="results" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">

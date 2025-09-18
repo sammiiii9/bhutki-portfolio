@@ -3,10 +3,13 @@ import Header from "../components/header.jsx"
 import Footer from "../components/footer.jsx"
 import WhatsAppSticky from "../components/whatsapp-sticky.jsx"
 import HomePage from "./pages/HomePage.jsx"
+import ProgramsPage from "./pages/ProgramsPage.jsx"
+import MethodPage from "./pages/MethodPage.jsx"
+import ResultsPage from "./pages/ResultsPage.jsx"
+import AboutPage from "./pages/AboutPage.jsx"
 import GalleryPage from "./pages/GalleryPage.jsx"
 import FAQPage from "./pages/FAQPage.jsx"
 import PrivacyPage from "./pages/PrivacyPage.jsx"
-import AboutPage from "./pages/AboutPage.jsx"
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/programs" element={<ProgramsPage />} />
+            <Route path="/method" element={<MethodPage />} />
+            <Route path="/results" element={<ResultsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/faq" element={<FAQPage />} />

@@ -1,13 +1,18 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Button } from "./ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, BookOpen } from "lucide-react"
 import AppointmentModal from "./appointment-modal"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const location = useLocation()
+
+  // Scroll to top when navigating to a new page
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <>
@@ -16,48 +21,52 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 bg-primary-foreground rounded-full"></div>
+                <BookOpen className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="font-bold text-xl text-foreground">Youth Mind Institute</span>
+              <span className="font-bold text-xl text-foreground">Pebble Steps</span>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {location.pathname === "/" ? (
-                <>
-                  <a href="#care" className="text-foreground hover:text-primary transition-colors">
-                    Care
-                  </a>
-                  <a href="#education" className="text-foreground hover:text-primary transition-colors">
-                    Education
-                  </a>
-                  <a href="#science" className="text-foreground hover:text-primary transition-colors">
-                    Science
-                  </a>
-                  <a href="#about" className="text-foreground hover:text-primary transition-colors">
-                    About
-                  </a>
-                </>
-              ) : (
-                <>
-                  <Link to="/#care" className="text-foreground hover:text-primary transition-colors">
-                    Care
-                  </Link>
-                  <Link to="/#education" className="text-foreground hover:text-primary transition-colors">
-                    Education
-                  </Link>
-                  <Link to="/#science" className="text-foreground hover:text-primary transition-colors">
-                    Science
-                  </Link>
-                </>
-              )}
+              <Link 
+                to="/" 
+                className={`hover:text-primary transition-colors ${
+                  location.pathname === "/" ? "text-primary font-medium" : "text-foreground"
+                }`}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/programs" 
+                className={`hover:text-primary transition-colors ${
+                  location.pathname === "/programs" ? "text-primary font-medium" : "text-foreground"
+                }`}
+              >
+                Programs
+              </Link>
+              <Link 
+                to="/method" 
+                className={`hover:text-primary transition-colors ${
+                  location.pathname === "/method" ? "text-primary font-medium" : "text-foreground"
+                }`}
+              >
+                Method
+              </Link>
+              <Link 
+                to="/results" 
+                className={`hover:text-primary transition-colors ${
+                  location.pathname === "/results" ? "text-primary font-medium" : "text-foreground"
+                }`}
+              >
+                Results
+              </Link>
               <Link 
                 to="/about" 
                 className={`hover:text-primary transition-colors ${
-                  location.pathname === "/about" ? "text-primary font-medium" : "text-muted-foreground"
+                  location.pathname === "/about" ? "text-primary font-medium" : "text-foreground"
                 }`}
               >
-                About Us
+                About
               </Link>
               <Link 
                 to="/gallery" 
@@ -67,22 +76,6 @@ export default function Header() {
               >
                 Gallery
               </Link>
-              <Link 
-                to="/faq" 
-                className={`hover:text-primary transition-colors ${
-                  location.pathname === "/faq" ? "text-primary font-medium" : "text-muted-foreground"
-                }`}
-              >
-                FAQ
-              </Link>
-              <Link 
-                to="/privacy" 
-                className={`hover:text-primary transition-colors ${
-                  location.pathname === "/privacy" ? "text-primary font-medium" : "text-muted-foreground"
-                }`}
-              >
-                Policies
-              </Link>
             </nav>
 
             <div className="hidden md:flex items-center gap-4">
@@ -90,7 +83,7 @@ export default function Header() {
                 onClick={() => setIsModalOpen(true)}
                 className="bg-accent text-accent-foreground hover:bg-accent/90"
               >
-                Appointments
+                Book Assessment
               </Button>
             </div>
 
@@ -104,52 +97,30 @@ export default function Header() {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-border">
               <nav className="flex flex-col gap-4">
-                {location.pathname === "/" ? (
-                  <>
-                    <a href="#care" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      Care
-                    </a>
-                    <a href="#education" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      Education
-                    </a>
-                    <a href="#science" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      Science
-                    </a>
-                    <a href="#about" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      About
-                    </a>
-                  </>
-                ) : (
-                  <>
-                    <Link to="/#care" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      Care
-                    </Link>
-                    <Link to="/#education" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      Education
-                    </Link>
-                    <Link to="/#science" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                      Science
-                    </Link>
-                  </>
-                )}
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  About Us
+                <Link to="/" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  Home
+                </Link>
+                <Link to="/programs" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  Programs
+                </Link>
+                <Link to="/method" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  Method
+                </Link>
+                <Link to="/results" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  Results
+                </Link>
+                <Link to="/about" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  About
                 </Link>
                 <Link to="/gallery" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Gallery
-                </Link>
-                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  FAQ
-                </Link>
-                <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Policies
                 </Link>
                 <div className="flex gap-2 pt-4">
                   <Button
                     onClick={() => setIsModalOpen(true)}
                     className="bg-accent text-accent-foreground hover:bg-accent/90"
                   >
-                    Appointments
+                    Book Assessment
                   </Button>
                 </div>
               </nav>

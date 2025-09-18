@@ -1,5 +1,6 @@
 import { Button } from "./ui/button"
-import { ArrowRight, Heart, Users, Award } from "lucide-react"
+import { Counter } from "./ui/counter"
+import { ArrowRight, Heart, Users, Award, BookOpen } from "lucide-react"
 
 export default function HeroSection() {
   return (
@@ -18,21 +19,21 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <Heart className="w-4 h-4" />
-                <span className="text-sm font-medium">Transforming Young Lives Since 1999</span>
+                <BookOpen className="w-4 h-4" />
+                <span className="text-sm font-medium">Structured Literacy & Confidence Building</span>
               </div>
               
               <h1 className="text-4xl lg:text-7xl font-bold leading-tight">
                 Building
-                <span className="block text-accent">Brighter</span>
+                <span className="block text-accent">Reading</span>
                 <span className="block text-3xl lg:text-5xl font-normal opacity-90">
-                  Futures for Youth Mental Health
+                  Clarity & Confidence
                 </span>
               </h1>
               
               <p className="text-xl lg:text-2xl opacity-90 leading-relaxed max-w-2xl">
-                The leading nonprofit dedicated to transforming children's mental health through 
-                innovative care, education, and groundbreaking research.
+                Personalized Orton-Gillingham based literacy program with Six Bricks methodology 
+                for children aged 4-14. From decoding to confidence.
               </p>
             </div>
 
@@ -49,15 +50,21 @@ export default function HeroSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold">10K+</div>
+                <div className="text-2xl lg:text-3xl font-bold">
+                  <Counter end="10" suffix="K+" />
+                </div>
                 <div className="text-sm opacity-80">Children Served</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold">85%</div>
+                <div className="text-2xl lg:text-3xl font-bold">
+                  <Counter end="85" suffix="%" />
+                </div>
                 <div className="text-sm opacity-80">Success Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold">25+</div>
+                <div className="text-2xl lg:text-3xl font-bold">
+                  <Counter end="25" suffix="+" />
+                </div>
                 <div className="text-sm opacity-80">Years Experience</div>
               </div>
             </div>

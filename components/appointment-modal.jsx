@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { X, Calendar, Clock, User, Phone, Mail } from "lucide-react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
@@ -13,6 +13,20 @@ export default function AppointmentModal({ isOpen, onClose }) {
     reason: "",
     message: ""
   })
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -35,7 +49,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-white border-b p-6 flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-gray-900">Book Appointment</h2>
+          <h2 className="text-2xl font-semibold text-gray-900">Book Free Assessment</h2>
           <Button variant="ghost" size="sm" onClick={onClose}>
             <X className="w-5 h-5" />
           </Button>
@@ -101,10 +115,10 @@ export default function AppointmentModal({ isOpen, onClose }) {
                 className="w-full h-10 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="">Select reason</option>
-                <option value="consultation">Initial Consultation</option>
-                <option value="therapy">Therapy Session</option>
-                <option value="assessment">Mental Health Assessment</option>
-                <option value="followup">Follow-up Appointment</option>
+                <option value="assessment">Free Reading Assessment</option>
+                <option value="consultation">Program Consultation</option>
+                <option value="trial">Trial Session</option>
+                <option value="parent-meeting">Parent Meeting</option>
                 <option value="other">Other</option>
               </select>
             </div>
@@ -166,7 +180,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
 
           <div className="bg-blue-50 p-4 rounded-lg">
             <p className="text-sm text-blue-800">
-              <strong>Note:</strong> This is a request for an appointment. Our team will review your submission and contact you within 24 hours to confirm your appointment time.
+              <strong>Note:</strong> This is a request for a free assessment. Our certified OG specialists will review your submission and contact you within 24 hours to schedule your personalized reading assessment.
             </p>
           </div>
 
