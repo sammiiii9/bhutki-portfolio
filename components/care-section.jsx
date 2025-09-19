@@ -4,7 +4,7 @@ import { MapPin, Heart } from "lucide-react"
 
 export default function CareSection() {
   return (
-    <section id="programs" className="py-20 relative overflow-hidden" style={{
+    <section id="programs" className="py-12 relative overflow-hidden" style={{
       background: 'linear-gradient(135deg, #f5dfdd 0%, #fdf2f8 50%, #ffffff 100%)'
     }}>
       {/* Decorative angled elements */}
@@ -12,7 +12,7 @@ export default function CareSection() {
       <div className="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-tl from-pink-50/30 to-transparent transform skew-y-2 origin-bottom-right"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="absolute -top-8 -left-8 w-32 h-32 bg-accent/20 rounded-full"></div>
             <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-primary/20 rounded-full"></div>
@@ -23,12 +23,12 @@ export default function CareSection() {
             />
           </div>
 
-          <div className="space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight text-balance">
+          <div className="space-y-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 leading-tight text-balance">
               Structured Literacy Programs
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base text-gray-600 leading-relaxed">
               Our certified specialists provide personalized Orton-Gillingham based literacy instruction combined with 
               Six Bricks methodology for children aged 4-14, focusing on reading clarity and confidence building.
             </p>
@@ -51,60 +51,126 @@ export default function CareSection() {
         </div>
 
         {/* Care Services Grid */}
-        <div className="mt-20">
-          <h3 className="text-2xl font-bold text-center mb-12 text-gray-800">PROGRAM DETAILS</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <div className="relative overflow-hidden">
-                <img
-                  src="/emotion-detection-therapy-session-with-child.jpg"
-                  alt="Emotion Detection"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h4 className="font-bold text-lg mb-2 text-gray-800">Emotion Detection</h4>
-                <p className="text-gray-600 text-sm">
-                  Build your child's emotional awareness and ability to cope with uncomfortable emotions.
-                </p>
-              </div>
-            </Card>
+        <div className="mt-12">
+          <h3 className="text-xl font-bold text-center mb-8 text-gray-800">PROGRAM DETAILS</h3>
+          <div className="space-y-6">
+            {/* First row - 3 cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/language-mastery-reading-writing-session.jpg"
+                    alt="Language Mastery"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6">
+                  <h4 className="font-bold text-lg mb-2 text-gray-800">Language Mastery</h4>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Orton-Gillingham based reading, writing, and phonemic awareness development
+                  </p>
+                  <ul className="text-gray-600 text-xs space-y-1">
+                    <li>• Phonics & Decoding</li>
+                    <li>• Reading Fluency</li>
+                    <li>• Writing Skills</li>
+                  </ul>
+                </div>
+              </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <div className="relative overflow-hidden">
-                <img
-                  src="/behavior-therapy-treatment-session.jpg"
-                  alt="Behavior Therapy Treatment"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h4 className="font-bold text-lg mb-2 text-gray-800">Behavior Therapy Treatment</h4>
-                <p className="text-gray-600 text-sm">
-                  Our therapists are effective at addressing behavioral issues in children from age two through
-                  adolescence.
-                </p>
-              </div>
-            </Card>
+              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/focus-memory-six-bricks-methodology.jpg"
+                    alt="Focus & Memory"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6">
+                  <h4 className="font-bold text-lg mb-2 text-gray-800">Focus & Memory</h4>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Six Bricks methodology for cognitive development and attention building
+                  </p>
+                  <ul className="text-gray-600 text-xs space-y-1">
+                    <li>• Attention Training</li>
+                    <li>• Memory Games</li>
+                    <li>• Problem Solving</li>
+                  </ul>
+                </div>
+              </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <div className="relative overflow-hidden">
-                <img
-                  src="/school-refusal-support-counseling.jpg"
-                  alt="School Refusal"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/public-speaking-storytelling-confidence.jpg"
+                    alt="Public Speaking & Storytelling"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6">
+                  <h4 className="font-bold text-lg mb-2 text-gray-800">Public Speaking & Storytelling</h4>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Build confidence through creative expression and communication skills
+                  </p>
+                  <ul className="text-gray-600 text-xs space-y-1">
+                    <li>• Storytelling</li>
+                    <li>• Presentation Skills</li>
+                    <li>• Confidence Building</li>
+                  </ul>
+                </div>
+              </Card>
+            </div>
+            
+            {/* Second row - 2 cards centered */}
+            <div className="flex justify-center">
+              <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
+                <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src="/parent-workshops-learning-support.jpg"
+                      alt="Parent Workshops"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-bold text-lg mb-2 text-gray-800">Parent Workshops</h4>
+                    <p className="text-gray-600 text-sm mb-4">
+                      Empower parents with tools to support their child's learning journey
+                    </p>
+                    <ul className="text-gray-600 text-xs space-y-1">
+                      <li>• Home Support</li>
+                      <li>• Progress Tracking</li>
+                      <li>• Learning Strategies</li>
+                    </ul>
+                  </div>
+                </Card>
+
+                <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src="/school-partnerships-collaboration.jpg"
+                      alt="School Partnerships"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-bold text-lg mb-2 text-gray-800">School Partnerships</h4>
+                    <p className="text-gray-600 text-sm mb-4">
+                      Collaborate with schools to enhance learning outcomes for all students
+                    </p>
+                    <ul className="text-gray-600 text-xs space-y-1">
+                      <li>• Teacher Training</li>
+                      <li>• Curriculum Support</li>
+                      <li>• Assessment Tools</li>
+                    </ul>
+                  </div>
+                </Card>
               </div>
-              <div className="p-6">
-                <h4 className="font-bold text-lg mb-2 text-gray-800">School Refusal</h4>
-                <p className="text-gray-600 text-sm">
-                  Evidence-based parent training and consultation for school refusal and attendance behaviors.
-                </p>
-              </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>

@@ -1,52 +1,79 @@
 import { Button } from "./ui/button"
 
 export default function AboutSection() {
+  const features = [
+    {
+      title: "Globally Certified Methods",
+      description: "We're one of the few institutes in India using certified Orton-Gillingham and Six Bricks methodologies, not generic teaching approaches.",
+      stat: "Only 5% of institutes in India are certified"
+    },
+    {
+      title: "Personalized Learning Paths", 
+      description: "Every child gets a unique program designed after detailed assessment. No one-size-fits-all solutions.",
+      stat: "Individual assessment for 100% children"
+    },
+    {
+      title: "Parent-Child Together Approach",
+      description: "Unlike other programs, we involve parents in the learning journey, ensuring consistency at home.",
+      stat: "2x faster results with parent involvement"
+    },
+    {
+      title: "Neuro-Science Based Learning",
+      description: "Our methods are backed by brain research and cognitive science, not just traditional teaching.",
+      stat: "Based on 50+ years of research"
+    },
+    {
+      title: "Proven Results In 8-12 weeks",
+      description: "Most traditional approaches take 6-12 months. Our structured, intensive approach shows results quickly.",
+      stat: "200+ success stories in under 3 months"
+    },
+    {
+      title: "Emotional Intelligence Focused",
+      description: "We don't just teach skills; we build confidence, reduce anxiety, and develop emotional resilience.",
+      stat: "95% improvement in confidence level"
+    }
+  ]
+
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-12 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance">
-              Transforming Children's Mental Health
-            </h2>
+        <div className="text-center space-y-8">
+          {/* Main Heading */}
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+            Why Choose Pebble Steps?
+          </h2>
+          
+          {/* Sub Heading */}
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            We're not just another tutoring center. We're pioneers in scientifically-proven, globally certified methods that transform children's lives.
+          </p>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                The Youth Mind Institute is dedicated to transforming the lives of children and families struggling with
-                mental health and learning disorders by giving them the help they need to thrive.
-              </p>
-              <p>
-                We're the leading independent nonprofit in children's mental health, operating three Mission Areas that
-                work together for greater impact: Care, Education and Science.
-              </p>
-            </div>
-
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              More About Us
-            </Button>
-          </div>
-
-          <div className="relative">
-            <div className="grid grid-cols-1 gap-8">
-              {/* Mission circles */}
-              <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-24 h-24 rounded-full border-4 border-accent flex items-center justify-center mb-4">
-                    <span className="font-bold text-accent">Science</span>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 rounded-full border-4 border-secondary flex items-center justify-center mb-4">
-                    <span className="font-bold text-secondary-foreground">Care</span>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-28 h-28 rounded-full border-4 border-primary flex items-center justify-center mb-4">
-                    <span className="font-bold text-primary">Education</span>
+          {/* Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-card rounded-xl p-6 border">
+                <div className="text-center space-y-3">
+                  <h3 className="text-lg font-bold text-foreground">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                  
+                  <div className="inline-block bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                    {feature.stat}
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="pt-6">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg">
+              More About Us
+            </Button>
           </div>
         </div>
       </div>

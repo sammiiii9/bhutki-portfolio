@@ -184,52 +184,119 @@ export default function ProgramsPage() {
                     {/* Specialized Programs */}
                     <div className="mb-20">
                         <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Specialized Programs</h3>
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <Card className="hover:shadow-lg transition-shadow">
                                 <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Dyslexia Support Program</h4>
+                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Language Mastery</h4>
                                     <p className="text-muted-foreground mb-6">
-                                        Intensive Orton-Gillingham based intervention for children with dyslexia and reading difficulties.
+                                        Orton-Gillingham based reading, writing, and phonemic awareness development
                                     </p>
                                     <ul className="space-y-2 mb-6">
                                         <li className="flex items-center gap-2">
                                             <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Multisensory learning approach</span>
+                                            <span className="text-sm">Phonics & Decoding</span>
                                         </li>
                                         <li className="flex items-center gap-2">
                                             <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Structured, sequential instruction</span>
+                                            <span className="text-sm">Reading Fluency</span>
                                         </li>
                                         <li className="flex items-center gap-2">
                                             <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Self-esteem building focus</span>
+                                            <span className="text-sm">Writing Skills</span>
                                         </li>
                                     </ul>
-                                    <Button variant="outline" className="w-full">Learn More</Button>
                                 </CardContent>
                             </Card>
 
                             <Card className="hover:shadow-lg transition-shadow">
                                 <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">ESL Reading Program</h4>
+                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Focus & Memory</h4>
                                     <p className="text-muted-foreground mb-6">
-                                        Specialized program for English language learners focusing on phonics and reading comprehension.
+                                        Six Bricks methodology for cognitive development and attention building
                                     </p>
                                     <ul className="space-y-2 mb-6">
                                         <li className="flex items-center gap-2">
                                             <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Cultural sensitivity approach</span>
+                                            <span className="text-sm">Attention Training</span>
                                         </li>
                                         <li className="flex items-center gap-2">
                                             <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Vocabulary building emphasis</span>
+                                            <span className="text-sm">Memory Games</span>
                                         </li>
                                         <li className="flex items-center gap-2">
                                             <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Confidence in English reading</span>
+                                            <span className="text-sm">Problem Solving</span>
                                         </li>
                                     </ul>
-                                    <Button variant="outline" className="w-full">Learn More</Button>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="hover:shadow-lg transition-shadow">
+                                <CardContent className="p-8">
+                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Public Speaking & Storytelling</h4>
+                                    <p className="text-muted-foreground mb-6">
+                                        Build confidence through creative expression and communication skills
+                                    </p>
+                                    <ul className="space-y-2 mb-6">
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Storytelling</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Presentation Skills</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Confidence Building</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="hover:shadow-lg transition-shadow">
+                                <CardContent className="p-8">
+                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Parent Workshops</h4>
+                                    <p className="text-muted-foreground mb-6">
+                                        Empower parents with tools to support their child's learning journey
+                                    </p>
+                                    <ul className="space-y-2 mb-6">
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Home Support</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Progress Tracking</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Learning Strategies</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="hover:shadow-lg transition-shadow">
+                                <CardContent className="p-8">
+                                    <h4 className="text-2xl font-bold mb-4 text-foreground">School Partnerships</h4>
+                                    <p className="text-muted-foreground mb-6">
+                                        Collaborate with schools to enhance learning outcomes for all students
+                                    </p>
+                                    <ul className="space-y-2 mb-6">
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Teacher Training</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Curriculum Support</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <CheckCircle className="w-4 h-4 text-green-600" />
+                                            <span className="text-sm">Assessment Tools</span>
+                                        </li>
+                                    </ul>
                                 </CardContent>
                             </Card>
                         </div>

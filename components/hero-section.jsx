@@ -22,7 +22,7 @@ export default function HeroSection() {
                 <BookOpen className="w-4 h-4" />
                 <span className="text-sm font-medium">Structured Literacy & Confidence Building</span>
               </div>
-              
+
               <h1 className="text-4xl lg:text-7xl font-bold leading-tight">
                 Building
                 <span className="block text-accent">Reading</span>
@@ -30,10 +30,10 @@ export default function HeroSection() {
                   Clarity & Confidence
                 </span>
               </h1>
-              
+
               <p className="text-xl lg:text-2xl opacity-90 leading-relaxed max-w-2xl">
-                Personalized Orton-Gillingham based literacy program with Six Bricks methodology 
-                for children aged 4-14. From decoding to confidence.
+                Personalized Orton-Gillingham & Six Bricks programs that help children master reading, Confidence, communication, and focus in just 8–12 weeks.
+
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export default function HeroSection() {
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold">
-                  <Counter end="10" suffix="K+" />
+                  <Counter end="50" suffix="0+" />
                 </div>
                 <div className="text-sm opacity-80">Children Served</div>
               </div>
@@ -63,9 +63,9 @@ export default function HeroSection() {
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold">
-                  <Counter end="25" suffix="+" />
+                  <Counter end="10" suffix="K+" />
                 </div>
-                <div className="text-sm opacity-80">Years Experience</div>
+                <div className="text-sm opacity-80">Learning Hours</div>
               </div>
             </div>
           </div>
@@ -74,14 +74,14 @@ export default function HeroSection() {
             {/* Floating Elements */}
             <div className="absolute -top-8 -left-8 w-24 h-24 bg-accent/20 rounded-full animate-pulse"></div>
             <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-foreground/10 rounded-full animate-pulse delay-1000"></div>
-            
+
             <div className="relative">
               <img
                 src="/happy-indian-boy-and-girl-children-smiling-togethe.jpg"
                 alt="Happy children representing youth mental health support"
                 className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
               />
-              
+
               {/* Floating Cards */}
               <div className="absolute -bottom-6 -left-6 bg-primary-foreground rounded-xl p-4 shadow-xl">
                 <div className="flex items-center gap-3">
@@ -94,7 +94,7 @@ export default function HeroSection() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="absolute -top-6 -right-6 bg-primary-foreground rounded-xl p-4 shadow-xl">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
