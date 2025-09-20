@@ -36,7 +36,6 @@ export default function HeroSection() {
                 Personalized Orton-Gillingham & Six Bricks programs that help children master reading, Confidence, communication, and focus in just 8–12 weeks.
               </p>
             </div>
-
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
                 <Button size="lg" className="bg-primary-foreground/5 text-primary hover:bg-primary-foreground/15 group w-full sm:w-auto">
