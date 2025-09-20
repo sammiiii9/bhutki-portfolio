@@ -1,326 +1,354 @@
 import { Button } from "../../components/ui/button"
 import { Card, CardContent } from "../../components/ui/card"
-import { BookOpen, Users, Clock, Target, CheckCircle, Star } from "lucide-react"
+import { BookOpen, Brain, MessageCircle, Users, School, CheckCircle, Clock, Target, Heart, Star, Phone } from "lucide-react"
 
 export default function ProgramsPage() {
-    return (
-        <div className="min-h-screen">
-            {/* Hero Section */}
-            <section className="relative py-20" style={{
-                background: 'linear-gradient(135deg, #f5dfdd 0%, #fdf2f8 50%, #ffffff 100%)'
-            }}>
-                <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-pink-100/50 to-transparent transform -skew-y-2 origin-top-left"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center space-y-6">
-                        <h1 className="text-4xl lg:text-6xl font-bold text-gray-800">Structured Literacy Programs</h1>
-                        <p className="text-xl lg:text-2xl max-w-3xl mx-auto text-gray-600">
-                            Personalized Orton-Gillingham based literacy instruction for children aged 4-14
-                        </p>
-                    </div>
-                </div>
-            </section>
+  const corePrograms = [
+    {
+      title: "Language Mastery",
+      description: "Comprehensive reading and language development program using Orton-Gillingham methodology",
+      icon: BookOpen,
+      color: "bg-primary",
+      features: [
+        "Structured phonics instruction",
+        "Reading comprehension strategies", 
+        "Vocabulary development",
+        "Spelling and writing skills",
+        "Multisensory learning activities"
+      ],
+      duration: "8-12 weeks",
+      sessions: "2-3 sessions per week",
+      suitable: "Ages 4-16, Reading difficulties, Dyslexia"
+    },
+    {
+      title: "Focus and Memory Mastery",
+      description: "Cognitive enhancement program combining Six Bricks methodology with attention training",
+      icon: Brain,
+      color: "bg-accent",
+      features: [
+        "Attention and concentration training",
+        "Working memory enhancement",
+        "Executive function development",
+        "Six Bricks cognitive activities",
+        "Mindfulness and self-regulation"
+      ],
+      duration: "6-10 weeks", 
+      sessions: "2 sessions per week",
+      suitable: "Ages 5-16, ADHD, Attention challenges"
+    },
+    {
+      title: "Confidence and Communication",
+      description: "Social communication and self-esteem building program for holistic development",
+      icon: MessageCircle,
+      color: "bg-primary",
+      features: [
+        "Social communication skills",
+        "Public speaking confidence",
+        "Emotional regulation techniques",
+        "Peer interaction strategies",
+        "Self-advocacy training"
+      ],
+      duration: "8-12 weeks",
+      sessions: "1-2 sessions per week", 
+      suitable: "Ages 6-16, Social anxiety, Communication challenges"
+    }
+  ]
 
-            {/* Main Programs */}
-            <section className="py-20 bg-background">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-foreground mb-4">Our Core Programs</h2>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Each program is designed to meet children where they are and help them build reading clarity and confidence
-                        </p>
-                    </div>
+  const specialPrograms = [
+    {
+      title: "Parent Child Workshop",
+      description: "Empowering parents with tools and strategies to support their child's learning journey at home",
+      icon: Heart,
+      features: [
+        "Understanding your child's learning style",
+        "Home-based activity strategies",
+        "Progress monitoring techniques",
+        "Communication strategies",
+        "Building confidence at home"
+      ],
+      format: "Monthly group sessions + individual consultations"
+    },
+    {
+      title: "School Partnership Program", 
+      description: "Collaborative approach working with schools to ensure consistent support across environments",
+      icon: School,
+      features: [
+        "Teacher consultation and training",
+        "Classroom accommodation strategies",
+        "Progress sharing and coordination",
+        "IEP/504 plan support",
+        "Transition planning"
+      ],
+      format: "Customized based on school needs"
+    }
+  ]
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                        {/* Foundation Program */}
-                        <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                            <CardContent className="p-8">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <BookOpen className="w-8 h-8 text-blue-600" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-center mb-4 text-foreground">Foundation Program</h3>
-                                <p className="text-center text-muted-foreground mb-6">Ages 4-6 | Pre-reading & Early Reading</p>
+  const programInclusions = [
+    {
+      title: "Comprehensive Assessment",
+      description: "Detailed evaluation of learning strengths and challenges",
+      icon: Target
+    },
+    {
+      title: "Personalized Learning Plan",
+      description: "Customized curriculum based on individual needs",
+      icon: BookOpen
+    },
+    {
+      title: "Certified Specialists",
+      description: "Expert instructors trained in specialized methodologies",
+      icon: Star
+    },
+    {
+      title: "Progress Monitoring",
+      description: "Regular assessments and progress reports",
+      icon: CheckCircle
+    },
+    {
+      title: "Parent Support",
+      description: "Ongoing guidance and home activity suggestions",
+      icon: Heart
+    },
+    {
+      title: "Flexible Scheduling",
+      description: "Online and in-person options available",
+      icon: Clock
+    }
+  ]
 
-                                <ul className="space-y-3 mb-8">
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Phonological awareness development</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Letter-sound correspondence</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Six Bricks multisensory activities</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Pre-writing skills</span>
-                                    </li>
-                                </ul>
-
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-primary mb-2">₹2,500/session</div>
-                                    <div className="text-sm text-muted-foreground mb-4">45 minutes | 2x per week</div>
-                                    <Button className="w-full">Start Foundation Program</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-
-                        {/* Building Program */}
-                        <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-primary">
-                            <CardContent className="p-8">
-                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Target className="w-8 h-8 text-primary" />
-                                </div>
-                                <div className="text-center mb-4">
-                                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">Most Popular</span>
-                                </div>
-                                <h3 className="text-2xl font-bold text-center mb-4 text-foreground">Building Program</h3>
-                                <p className="text-center text-muted-foreground mb-6">Ages 6-10 | Decoding & Fluency</p>
-
-                                <ul className="space-y-3 mb-8">
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Systematic phonics instruction</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Orton-Gillingham methodology</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Reading fluency development</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Confidence building activities</span>
-                                    </li>
-                                </ul>
-
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-primary mb-2">₹3,000/session</div>
-                                    <div className="text-sm text-muted-foreground mb-4">60 minutes | 2x per week</div>
-                                    <Button className="w-full">Start Building Program</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-
-                        {/* Mastery Program */}
-                        <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                            <CardContent className="p-8">
-                                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Star className="w-8 h-8 text-purple-600" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-center mb-4 text-foreground">Mastery Program</h3>
-                                <p className="text-center text-muted-foreground mb-6">Ages 10-14 | Comprehension & Advanced Skills</p>
-
-                                <ul className="space-y-3 mb-8">
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Reading comprehension strategies</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Advanced vocabulary development</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Critical thinking skills</span>
-                                    </li>
-                                    <li className="flex items-center gap-3">
-                                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                                        <span className="text-sm">Academic confidence building</span>
-                                    </li>
-                                </ul>
-
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-primary mb-2">₹3,500/session</div>
-                                    <div className="text-sm text-muted-foreground mb-4">60 minutes | 2x per week</div>
-                                    <Button className="w-full">Start Mastery Program</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    {/* Program Features */}
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-20">
-                        <h3 className="text-3xl font-bold text-center mb-12 text-foreground">What's Included in Every Program</h3>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Users className="w-8 h-8 text-blue-600" />
-                                </div>
-                                <h4 className="font-bold mb-2">1:1 Sessions</h4>
-                                <p className="text-sm text-muted-foreground">Personalized attention with certified OG specialists</p>
-                            </div>
-
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Target className="w-8 h-8 text-green-600" />
-                                </div>
-                                <h4 className="font-bold mb-2">Custom Plans</h4>
-                                <p className="text-sm text-muted-foreground">Tailored learning plans based on individual assessment</p>
-                            </div>
-
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Clock className="w-8 h-8 text-purple-600" />
-                                </div>
-                                <h4 className="font-bold mb-2">Progress Tracking</h4>
-                                <p className="text-sm text-muted-foreground">Regular assessments and detailed progress reports</p>
-                            </div>
-
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <BookOpen className="w-8 h-8 text-orange-600" />
-                                </div>
-                                <h4 className="font-bold mb-2">Parent Support</h4>
-                                <p className="text-sm text-muted-foreground">Regular parent coaching and home activity guidance</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Specialized Programs */}
-                    <div className="mb-20">
-                        <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Specialized Programs</h3>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <Card className="hover:shadow-lg transition-shadow">
-                                <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Language Mastery</h4>
-                                    <p className="text-muted-foreground mb-6">
-                                        Orton-Gillingham based reading, writing, and phonemic awareness development
-                                    </p>
-                                    <ul className="space-y-2 mb-6">
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Phonics & Decoding</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Reading Fluency</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Writing Skills</span>
-                                        </li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="hover:shadow-lg transition-shadow">
-                                <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Focus & Memory</h4>
-                                    <p className="text-muted-foreground mb-6">
-                                        Six Bricks methodology for cognitive development and attention building
-                                    </p>
-                                    <ul className="space-y-2 mb-6">
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Attention Training</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Memory Games</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Problem Solving</span>
-                                        </li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="hover:shadow-lg transition-shadow">
-                                <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Public Speaking & Storytelling</h4>
-                                    <p className="text-muted-foreground mb-6">
-                                        Build confidence through creative expression and communication skills
-                                    </p>
-                                    <ul className="space-y-2 mb-6">
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Storytelling</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Presentation Skills</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Confidence Building</span>
-                                        </li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="hover:shadow-lg transition-shadow">
-                                <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">Parent Workshops</h4>
-                                    <p className="text-muted-foreground mb-6">
-                                        Empower parents with tools to support their child's learning journey
-                                    </p>
-                                    <ul className="space-y-2 mb-6">
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Home Support</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Progress Tracking</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Learning Strategies</span>
-                                        </li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="hover:shadow-lg transition-shadow">
-                                <CardContent className="p-8">
-                                    <h4 className="text-2xl font-bold mb-4 text-foreground">School Partnerships</h4>
-                                    <p className="text-muted-foreground mb-6">
-                                        Collaborate with schools to enhance learning outcomes for all students
-                                    </p>
-                                    <ul className="space-y-2 mb-6">
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Teacher Training</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Curriculum Support</span>
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-600" />
-                                            <span className="text-sm">Assessment Tools</span>
-                                        </li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-20 bg-primary text-primary-foreground">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Start Your Child's Reading Journey?</h2>
-                    <p className="text-xl mb-8 opacity-90">
-                        Book a free assessment to find the perfect program for your child's needs.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                            Book Free Assessment
-                        </Button>
-                        <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                            Download Program Guide
-                        </Button>
-                    </div>
-                </div>
-            </section>
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+              Our <span className="text-primary">Programs</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Comprehensive, evidence-based programs designed to unlock your child's potential and build lasting confidence
+            </p>
+          </div>
         </div>
-    )
+      </section>
+
+      {/* Structured Literacy Program Intro */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Structured Literacy <span className="text-primary">Program</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our flagship approach combining proven methodologies to address diverse learning needs and unlock each child's potential
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-6">
+              <Card className="p-6 bg-primary/5 border-primary/20">
+                <h3 className="text-xl font-bold text-foreground mb-4">Why Structured Literacy?</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground">Evidence-based approach proven effective for all learners</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground">Particularly beneficial for children with dyslexia and reading difficulties</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground">Systematic progression ensures solid foundation building</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-muted-foreground">Multisensory techniques engage all learning styles</span>
+                  </div>
+                </div>
+              </Card>
+            </div>
+            <div className="relative">
+              <img
+                src="/child-psychology-assessment-session.jpg"
+                alt="Structured Literacy Program"
+                className="w-full h-80 object-cover rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Programs */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Our Core <span className="text-primary">Programs</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Specialized programs targeting different aspects of learning and development
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {corePrograms.map((program, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardContent className="p-6">
+                  <div className="text-center mb-6">
+                    <div className={`w-16 h-16 ${program.color}/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <program.icon className={`w-8 h-8 ${program.color === 'bg-primary' ? 'text-primary' : 'text-accent'}`} />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{program.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{program.description}</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm mb-2">Program Features:</h4>
+                      <div className="space-y-2">
+                        {program.features.map((feature, i) => (
+                          <div key={i} className="flex items-center space-x-2">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-xs text-muted-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4 space-y-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Duration:</span>
+                        <span className="font-medium text-foreground">{program.duration}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Sessions:</span>
+                        <span className="font-medium text-foreground">{program.sessions}</span>
+                      </div>
+                      <div className="text-xs">
+                        <span className="text-muted-foreground">Suitable for: </span>
+                        <span className="font-medium text-foreground">{program.suitable}</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Special Programs */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Special <span className="text-primary">Programs</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Additional support programs for comprehensive family and school involvement
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {specialPrograms.map((program, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                      <program.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground">{program.title}</h3>
+                      <p className="text-muted-foreground text-sm">{program.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm mb-3">What's Included:</h4>
+                      <div className="space-y-2">
+                        {program.features.map((feature, i) => (
+                          <div key={i} className="flex items-center space-x-3">
+                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4">
+                      <div className="text-sm">
+                        <span className="text-muted-foreground">Format: </span>
+                        <span className="font-medium text-foreground">{program.format}</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              What's Included In <span className="text-primary">Every Program</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Comprehensive support and resources to ensure your child's success
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programInclusions.map((inclusion, index) => (
+              <Card key={index} className="text-center hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <inclusion.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{inclusion.title}</h3>
+                  <p className="text-muted-foreground text-sm">{inclusion.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Card className="bg-primary/5 border-primary/20">
+            <CardContent className="p-12">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Phone className="w-8 h-8 text-primary" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Book a free discovery call to learn which program is right for your child. 
+                Our specialists will assess your child's needs and recommend the best approach.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Book Free Discovery Call
+                </Button>
+                <Button size="lg" variant="outline">
+                  Learn About Our Methods
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                No commitment required • Free consultation • Personalized recommendations
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    </div>
+  )
 }

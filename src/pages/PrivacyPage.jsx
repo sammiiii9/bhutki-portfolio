@@ -1,19 +1,21 @@
 import { Card } from "../../components/ui/card"
 import { Button } from "../../components/ui/button"
 import { Shield, Lock, Eye, FileText, Phone, Mail } from "lucide-react"
+import { useSiteConfig } from "../hooks/useSiteConfig"
 
 export default function PrivacyPage() {
+  const { contact } = useSiteConfig()
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-primary-foreground py-20">
+      <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
-            <h1 className="text-4xl lg:text-6xl font-bold">Privacy Policy</h1>
-            <p className="text-xl lg:text-2xl max-w-3xl mx-auto opacity-90">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground">Privacy Policy</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Your privacy and the confidentiality of your information is our top priority
             </p>
-            <p className="text-lg opacity-75">Last updated: January 2024</p>
+            <p className="text-lg text-muted-foreground">Last updated: January 2024</p>
           </div>
         </div>
       </section>
@@ -212,7 +214,7 @@ export default function PrivacyPage() {
                         <Phone className="w-5 h-5 text-primary" />
                         <div>
                           <p className="font-semibold text-foreground">Phone</p>
-                          <p className="text-muted-foreground">(123) 456-7890</p>
+                          <p className="text-muted-foreground">{contact?.phone?.display}</p>
                         </div>
                       </div>
                       
@@ -220,7 +222,7 @@ export default function PrivacyPage() {
                         <Mail className="w-5 h-5 text-primary" />
                         <div>
                           <p className="font-semibold text-foreground">Email</p>
-                          <p className="text-muted-foreground">privacy@youthmind.org</p>
+                          <p className="text-muted-foreground">{contact?.email?.privacy || contact?.email?.primary}</p>
                         </div>
                       </div>
                     </div>

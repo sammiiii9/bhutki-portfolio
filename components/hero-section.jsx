@@ -1,6 +1,7 @@
 import { Button } from "./ui/button"
 import { Counter } from "./ui/counter"
-import { ArrowRight, Heart, Users, Award, BookOpen } from "lucide-react"
+import { Link } from "react-router-dom"
+import { ArrowRight, Users, Award, BookOpen } from "lucide-react"
 
 export default function HeroSection() {
   return (
@@ -33,18 +34,21 @@ export default function HeroSection() {
 
               <p className="text-xl lg:text-2xl opacity-90 leading-relaxed max-w-2xl">
                 Personalized Orton-Gillingham & Six Bricks programs that help children master reading, Confidence, communication, and focus in just 8–12 weeks.
-
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-bg-primary-foreground/90 text-primary hover:bg-primary-foreground/10 group">
-                Get Started Today
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-white/20 hover:text-white backdrop-blur-sm">
-                Learn About Our Programs
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="bg-primary-foreground/5 text-primary hover:bg-primary-foreground/15 group w-full sm:w-auto">
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/programs">
+                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-white/20 hover:text-white backdrop-blur-sm w-full sm:w-auto">
+                  Learn About Our Programs
+                </Button>
+              </Link>
             </div>
 
             {/* Stats */}
@@ -76,11 +80,37 @@ export default function HeroSection() {
             <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-foreground/10 rounded-full animate-pulse delay-1000"></div>
 
             <div className="relative">
+              {/* Main Hero Image */}
               <img
                 src="/happy-indian-boy-and-girl-children-smiling-togethe.jpg"
-                alt="Happy children representing youth mental health support"
+                alt="Children engaged in structured literacy learning with confidence"
                 className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
               />
+
+              {/* Secondary Images - Smaller overlays */}
+              <div className="absolute top-4 right-4 w-24 h-24 lg:w-32 lg:h-32 rounded-xl overflow-hidden shadow-lg border-2 border-white/50">
+                <img
+                  src="/father-and-child-reading-together-educational-reso.jpg"
+                  alt="Father and child reading together"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="absolute bottom-20 left-4 w-20 h-20 lg:w-28 lg:h-28 rounded-xl overflow-hidden shadow-lg border-2 border-white/50">
+                <img
+                  src="/diverse-children-playing-together-mental-health-to.jpg"
+                  alt="Diverse children playing together"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="absolute top-1/2 left-2 w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg border-2 border-white/50 transform -translate-y-1/2">
+                <img
+                  src="/caring-therapist-with-child-patient-in-bright-ther.jpg"
+                  alt="Caring therapist with child patient"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
               {/* Floating Cards */}
               <div className="absolute -bottom-6 -left-6 bg-primary-foreground rounded-xl p-4 shadow-xl">

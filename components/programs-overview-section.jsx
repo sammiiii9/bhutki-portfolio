@@ -2,15 +2,15 @@ import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
 import { MapPin, Heart } from "lucide-react"
 
-export default function CareSection() {
+export default function ProgramsOverviewSection() {
   return (
-    <section id="programs" className="py-12 relative overflow-hidden" style={{
+    <section id="programs-overview" className="py-12 relative overflow-hidden" style={{
       background: 'linear-gradient(135deg, #f5dfdd 0%, #fdf2f8 50%, #ffffff 100%)'
     }}>
       {/* Decorative angled elements */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-pink-100/50 to-transparent transform -skew-y-2 origin-top-left"></div>
       <div className="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-tl from-pink-50/30 to-transparent transform skew-y-2 origin-bottom-right"></div>
-      
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
@@ -29,13 +29,13 @@ export default function CareSection() {
             </h2>
 
             <p className="text-base text-gray-600 leading-relaxed">
-              Our certified specialists provide personalized Orton-Gillingham based literacy instruction combined with 
+              Our certified specialists provide personalized Orton-Gillingham based literacy instruction combined with
               Six Bricks methodology for children aged 4-14, focusing on reading clarity and confidence building.
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-emerald-600" />
+                <MapPin className="w-5 h-5 text-pink-600" />
                 <span className="text-gray-700">Online 1:1 sessions with certified OG specialists</span>
               </div>
               <div className="flex items-center gap-3">
@@ -59,9 +59,9 @@ export default function CareSection() {
               <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/language-mastery-reading-writing-session.jpg"
+                    src="/father-and-child-reading-together-educational-reso.jpg"
                     alt="Language Mastery"
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -81,9 +81,9 @@ export default function CareSection() {
               <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/focus-memory-six-bricks-methodology.jpg"
+                    src="/researchers-studying-child-brain-development-neuro.jpg"
                     alt="Focus & Memory"
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -103,9 +103,9 @@ export default function CareSection() {
               <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/public-speaking-storytelling-confidence.jpg"
+                    src="/happy-diverse-young-person-smiling-outdoors-mental.jpg"
                     alt="Public Speaking & Storytelling"
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -122,16 +122,16 @@ export default function CareSection() {
                 </div>
               </Card>
             </div>
-            
+
             {/* Second row - 2 cards centered */}
             <div className="flex justify-center">
-              <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
+              <div className="grid md:grid-cols-2 gap-6 w-full" style={{ maxWidth: 'calc(66.666667% + 1.5rem)' }}>
                 <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                   <div className="relative overflow-hidden">
                     <img
-                      src="/parent-workshops-learning-support.jpg"
+                      src="/parent-and-child-discussing-mental-health-concerns.jpg"
                       alt="Parent Workshops"
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -151,9 +151,9 @@ export default function CareSection() {
                 <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                   <div className="relative overflow-hidden">
                     <img
-                      src="/school-partnerships-collaboration.jpg"
+                      src="/diverse-children-playing-together-mental-health-to.jpg"
                       alt="School Partnerships"
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>

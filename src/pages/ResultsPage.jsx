@@ -1,326 +1,403 @@
 import { Button } from "../../components/ui/button"
 import { Card, CardContent } from "../../components/ui/card"
-import { Counter } from "../../components/ui/counter"
-import { TrendingUp, Star, Users, Award, Quote, CheckCircle } from "lucide-react"
+import { TrendingUp, Users, Clock, Award, Star, Quote, Play, BookOpen, Brain, Target } from "lucide-react"
 
 export default function ResultsPage() {
+  const impactNumbers = [
+    {
+      number: "2,500+",
+      label: "Children Transformed",
+      description: "Successful learning journeys completed",
+      icon: Users,
+      color: "text-primary"
+    },
+    {
+      number: "95%",
+      label: "Success Rate", 
+      description: "Children show significant improvement",
+      icon: TrendingUp,
+      color: "text-accent"
+    },
+    {
+      number: "8-12",
+      label: "Weeks to Results",
+      description: "Average time to see measurable progress",
+      icon: Clock,
+      color: "text-primary"
+    },
+    {
+      number: "18+",
+      label: "Months Progress",
+      description: "Average reading level improvement",
+      icon: Award,
+      color: "text-accent"
+    }
+  ]
+
+  const successStories = [
+    {
+      name: "Arjun, Age 8",
+      challenge: "Severe reading difficulties and low confidence",
+      result: "Reading at grade level within 10 weeks, loves books now",
+      improvement: "2.5 grade levels",
+      program: "Language Mastery",
+      quote: "Arjun went from crying during homework to asking for extra reading time. The transformation has been incredible.",
+      parent: "Priya Sharma, Mother"
+    },
+    {
+      name: "Meera, Age 12", 
+      challenge: "ADHD and attention difficulties affecting academics",
+      result: "Improved focus, better grades, increased self-esteem",
+      improvement: "85% attention improvement",
+      program: "Focus and Memory Mastery",
+      quote: "The Six Bricks activities helped Meera learn to focus in a fun way. Her teachers noticed the difference immediately.",
+      parent: "Rajesh Kumar, Father"
+    },
+    {
+      name: "Aarav, Age 10",
+      challenge: "Social anxiety and communication struggles",
+      result: "Confident speaker, better peer relationships",
+      improvement: "Dramatic confidence boost",
+      program: "Confidence and Communication",
+      quote: "Aarav now raises his hand in class and has made new friends. His whole personality has blossomed.",
+      parent: "Sunita Patel, Mother"
+    }
+  ]
+
+  const progressTimeline = [
+    {
+      week: "Weeks 1-2",
+      milestone: "Assessment & Foundation",
+      description: "Comprehensive evaluation and program customization",
+      activities: ["Initial assessment", "Learning style identification", "Goal setting", "Program design"]
+    },
+    {
+      week: "Weeks 3-6", 
+      milestone: "Skill Building",
+      description: "Core skill development with multisensory activities",
+      activities: ["Phonics instruction", "Six Bricks integration", "Memory training", "Confidence building"]
+    },
+    {
+      week: "Weeks 7-10",
+      milestone: "Integration & Practice",
+      description: "Applying skills in real-world contexts",
+      activities: ["Reading fluency", "Comprehension strategies", "Social skills practice", "Academic application"]
+    },
+    {
+      week: "Weeks 11-12",
+      milestone: "Mastery & Transition",
+      description: "Independent application and future planning",
+      activities: ["Skill consolidation", "Independence training", "Transition planning", "Ongoing support setup"]
+    }
+  ]
+
+  const researchOutcomes = [
+    {
+      metric: "Reading Fluency",
+      improvement: "Average 2.3 grade levels",
+      description: "Measured using standardized reading assessments",
+      icon: BookOpen
+    },
+    {
+      metric: "Attention Span",
+      improvement: "85% increase",
+      description: "Sustained attention during learning tasks",
+      icon: Brain
+    },
+    {
+      metric: "Self-Confidence",
+      improvement: "92% of children",
+      description: "Report feeling more confident about learning",
+      icon: Target
+    },
+    {
+      metric: "Academic Performance",
+      improvement: "78% grade improvement",
+      description: "Better performance in school subjects",
+      icon: Award
+    }
+  ]
+
+  const testimonialVideos = [
+    {
+      parent: "Mrs. Sharma",
+      child: "Rohan, Age 9",
+      title: "From Struggling Reader to Book Lover",
+      duration: "2:30"
+    },
+    {
+      parent: "Mr. & Mrs. Gupta",
+      child: "Ananya, Age 7", 
+      title: "Overcoming Dyslexia with Confidence",
+      duration: "3:15"
+    },
+    {
+      parent: "Dr. Patel",
+      child: "Karan, Age 11",
+      title: "ADHD Success Story",
+      duration: "2:45"
+    }
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-primary-foreground py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6">
-            <h1 className="text-4xl lg:text-6xl font-bold">Proven Results</h1>
-            <p className="text-xl lg:text-2xl max-w-3xl mx-auto opacity-90">
-              Real success stories from families who've transformed their children's reading journey
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+              Our <span className="text-primary">Results</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Real transformations, measurable progress, and lasting confidence - see the impact of our evidence-based approach
             </p>
           </div>
         </div>
       </section>
 
-      {/* Success Metrics */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Impact Numbers */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Our Impact by the Numbers</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Our Impact By the <span className="text-primary">Numbers</span>
+            </h2>
             <p className="text-lg text-muted-foreground">
               Measurable results that speak for themselves
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <TrendingUp className="w-8 h-8 text-primary" />
-                </div>
-                <div className="text-4xl font-bold text-primary">
-                  <Counter end="92" suffix="%" />
-                </div>
-                <p className="text-muted-foreground">Reading improvement within 3 months</p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {impactNumbers.map((stat, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className={`w-8 h-8 ${stat.color}`} />
+                  </div>
+                  <div className={`text-4xl font-bold ${stat.color} mb-2`}>{stat.number}</div>
+                  <div className="text-lg font-semibold text-foreground mb-2">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground">{stat.description}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                  <Star className="w-8 h-8 text-accent" />
-                </div>
-                <div className="text-4xl font-bold text-accent">
-                  <Counter end="4.9" suffix="/5" />
-                </div>
-                <p className="text-muted-foreground">Average parent satisfaction rating</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto">
-                  <Users className="w-8 h-8 text-secondary-foreground" />
-                </div>
-                <div className="text-4xl font-bold text-secondary-foreground">
-                  <Counter end="2500" suffix="+" />
-                </div>
-                <p className="text-muted-foreground">Children successfully supported</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <CardContent className="space-y-4">
-                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto">
-                  <Award className="w-8 h-8 text-muted-foreground" />
-                </div>
-                <div className="text-4xl font-bold text-muted-foreground">
-                  <Counter end="18" suffix=" months" />
-                </div>
-                <p className="text-muted-foreground">Average reading level improvement</p>
-              </CardContent>
-            </Card>
+      {/* Success Stories */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Success <span className="text-primary">Stories</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Real children, real families, real transformations
+            </p>
           </div>
 
-          {/* Success Stories */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Success Stories</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold">
-                      A
+          <div className="grid lg:grid-cols-3 gap-8">
+            {successStories.map((story, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-xl font-bold text-foreground">{story.name}</h3>
+                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{story.program}</span>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-foreground">Aarav, Age 7</h4>
-                      <p className="text-sm text-muted-foreground">Foundation Program</p>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-sm font-medium text-muted-foreground">Challenge: </span>
+                        <span className="text-sm text-foreground">{story.challenge}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-muted-foreground">Result: </span>
+                        <span className="text-sm text-foreground">{story.result}</span>
+                      </div>
+                      <div className="bg-primary/5 p-3 rounded-lg">
+                        <span className="text-sm font-medium text-primary">Improvement: {story.improvement}</span>
+                      </div>
                     </div>
                   </div>
-                  <Quote className="w-8 h-8 text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground mb-6 italic">
-                    "Aarav went from struggling with letter recognition to reading simple books in just 4 months. 
-                    His confidence has soared, and he actually asks to read bedtime stories now!"
-                  </p>
-                  <div className="text-sm text-muted-foreground">- Priya M., Parent</div>
-                  <div className="mt-4 flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span className="text-sm text-green-600">2 grade levels improvement</span>
-                  </div>
-                </CardContent>
-              </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold">
-                      S
+                  <div className="border-t pt-4">
+                    <div className="flex items-start space-x-3">
+                      <Quote className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="text-sm text-muted-foreground italic mb-2">"{story.quote}"</p>
+                        <p className="text-xs font-medium text-foreground">- {story.parent}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-foreground">Sophia, Age 9</h4>
-                      <p className="text-sm text-muted-foreground">Building Program</p>
-                    </div>
-                  </div>
-                  <Quote className="w-8 h-8 text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground mb-6 italic">
-                    "The Six Bricks activities made learning fun for Sophia. She was diagnosed with dyslexia, 
-                    but now she's reading at grade level and loves books!"
-                  </p>
-                  <div className="text-sm text-muted-foreground">- Michael R., Parent</div>
-                  <div className="mt-4 flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span className="text-sm text-green-600">Overcame dyslexia challenges</span>
                   </div>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                      R
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-foreground">Rohan, Age 12</h4>
-                      <p className="text-sm text-muted-foreground">Mastery Program</p>
-                    </div>
-                  </div>
-                  <Quote className="w-8 h-8 text-muted-foreground mb-4" />
-                  <p className="text-muted-foreground mb-6 italic">
-                    "Rohan's reading comprehension improved dramatically. He went from avoiding reading 
-                    to becoming the top reader in his class. Thank you, Pebble Steps!"
-                  </p>
-                  <div className="text-sm text-muted-foreground">- Anita K., Parent</div>
-                  <div className="mt-4 flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span className="text-sm text-green-600">Top of class achievement</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+      {/* Progress Timeline */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Typical Progress <span className="text-primary">Timeline</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              What to expect during your child's transformation journey
+            </p>
           </div>
 
-          {/* Before & After Comparison */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Typical Progress Timeline</h3>
-            <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-2xl p-8">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h4 className="text-2xl font-bold mb-6 text-red-600">Before Pebble Steps</h4>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">Struggles with letter-sound recognition</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">Avoids reading activities</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">Low confidence in academic settings</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">Reading below grade level</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">Homework battles and frustration</span>
-                    </li>
-                  </ul>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-0.5 h-full w-0.5 bg-primary/30 hidden lg:block"></div>
+            
+            <div className="space-y-12">
+              {progressTimeline.map((phase, index) => (
+                <div key={index} className="relative">
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    {/* Content */}
+                    <div className={`${index % 2 === 0 ? 'lg:text-right' : 'lg:order-2'}`}>
+                      <Card className="hover:shadow-lg transition-shadow">
+                        <CardContent className="p-6">
+                          <div className="mb-4">
+                            <span className="text-sm font-medium text-primary">{phase.week}</span>
+                            <h3 className="text-xl font-bold text-foreground">{phase.milestone}</h3>
+                            <p className="text-muted-foreground">{phase.description}</p>
+                          </div>
+                          <div className="space-y-2">
+                            {phase.activities.map((activity, i) => (
+                              <div key={i} className="flex items-center space-x-2">
+                                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                <span className="text-sm text-muted-foreground">{activity}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+
+                    {/* Timeline marker */}
+                    <div className="hidden lg:flex justify-center">
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
+                        {index + 1}
+                      </div>
+                    </div>
+
+                    {/* Mobile marker */}
+                    <div className="lg:hidden flex items-center space-x-4 mb-4">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      <span className="text-sm font-medium text-primary">{phase.week}</span>
+                    </div>
+                  </div>
                 </div>
-
-                <div>
-                  <h4 className="text-2xl font-bold mb-6 text-green-600">After 6 Months</h4>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Confident phonics and decoding skills</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Enjoys reading for pleasure</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Increased self-esteem and participation</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Reading at or above grade level</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Independent homework completion</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Research Results */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Research-Backed Outcomes</h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="text-center p-8">
-                <CardContent className="space-y-4">
-                  <div className="text-3xl font-bold text-primary mb-2">85%</div>
-                  <h4 className="font-bold text-foreground">Phonemic Awareness</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Children show significant improvement in phonemic awareness within 12 weeks
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center p-8">
-                <CardContent className="space-y-4">
-                  <div className="text-3xl font-bold text-primary mb-2">78%</div>
-                  <h4 className="font-bold text-foreground">Reading Fluency</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Increase in reading fluency scores after 6 months of instruction
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center p-8">
-                <CardContent className="space-y-4">
-                  <div className="text-3xl font-bold text-primary mb-2">91%</div>
-                  <h4 className="font-bold text-foreground">Confidence Boost</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Parents report increased confidence and positive attitude toward reading
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Video Testimonials */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Video Testimonials</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <div className="relative">
-                    <img
-                      src="/happy-indian-boy-and-girl-children-smiling-togethe.jpg"
-                      alt="Parent testimonial"
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
-                        ▶ Play Video
-                      </Button>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-bold text-lg mb-2">Parent Success Story</h4>
-                    <p className="text-muted-foreground text-sm">
-                      Watch how Pebble Steps transformed Maya's reading journey in just 4 months
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <div className="relative">
-                    <img
-                      src="/caring-therapist-with-child-patient-in-bright-ther.jpg"
-                      alt="Specialist testimonial"
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
-                        ▶ Play Video
-                      </Button>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-bold text-lg mb-2">Specialist Insights</h4>
-                    <p className="text-muted-foreground text-sm">
-                      Our certified OG specialist explains the methodology behind our success
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to See These Results for Your Child?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join thousands of families who've already transformed their children's reading journey.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
-              Start Your Success Story
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
-              View More Results
-            </Button>
+      {/* Research-Backed Outcomes */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Research-Backed <span className="text-primary">Outcomes</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Scientifically measured improvements across key learning areas
+            </p>
           </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {researchOutcomes.map((outcome, index) => (
+              <Card key={index} className="text-center hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <outcome.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{outcome.metric}</h3>
+                  <div className="text-2xl font-bold text-primary mb-2">{outcome.improvement}</div>
+                  <p className="text-sm text-muted-foreground">{outcome.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Testimonials */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Video Testimonials of <span className="text-primary">Parents</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Hear directly from families about their transformation experiences
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonialVideos.map((video, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative bg-muted/20 h-48 flex items-center justify-center">
+                  <div className="text-center space-y-3">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+                      <Play className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">{video.parent}</h4>
+                      <p className="text-sm text-muted-foreground">{video.child}</p>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-foreground mb-2">{video.title}</h3>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Duration: {video.duration}</span>
+                    <Button size="sm" variant="outline">
+                      <Play className="w-3 h-3 mr-1" />
+                      Watch
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Card className="bg-primary/10 border-primary/20">
+            <CardContent className="p-12">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Star className="w-8 h-8 text-primary" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                Ready to See These Results for Your Child?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Join thousands of families who have transformed their children's learning journey. 
+                Your success story could be next.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Start Your Child's Journey
+                </Button>
+                <Button size="lg" variant="outline">
+                  View Our Programs
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                Free discovery call • No commitment • Personalized assessment
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>

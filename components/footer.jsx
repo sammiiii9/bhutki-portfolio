@@ -2,8 +2,10 @@ import { Link } from "react-router-dom"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, BookOpen } from "lucide-react"
+import { useSiteConfig } from "../src/hooks/useSiteConfig"
 
 export default function Footer() {
+  const { company, contact, social } = useSiteConfig()
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
@@ -16,12 +18,11 @@ export default function Footer() {
                 <div className="w-10 h-10 bg-primary-foreground rounded-full flex items-center justify-center">
                   <BookOpen className="w-5 h-5 text-primary" />
                 </div>
-                <span className="font-bold text-xl">Pebble Steps</span>
+                <span className="font-bold text-xl">{company?.name}</span>
               </Link>
 
               <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-md">
-                Personalized Orton-Gillingham based literacy program with Six Bricks methodology. 
-                Building reading clarity and confidence for children aged 4-14.
+                {company?.description}
               </p>
 
               {/* Newsletter */}
@@ -43,16 +44,16 @@ export default function Footer() {
 
               {/* Social Links */}
               <div className="flex gap-4 mt-6">
-                <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                <a href={social?.facebook} className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                <a href={social?.twitter} className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                <a href={social?.instagram} className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                <a href={social?.linkedin} className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
@@ -63,7 +64,7 @@ export default function Footer() {
               <h4 className="font-semibold mb-6 text-lg">Our Programs</h4>
               <ul className="space-y-3 text-primary-foreground/80">
                 <li>
-                  <a href="#programs" className="hover:text-primary-foreground transition-colors flex items-center gap-2">
+                  <a href="#programs-overview" className="hover:text-primary-foreground transition-colors flex items-center gap-2">
                     <span className="w-1 h-1 bg-accent rounded-full"></span>
                     Literacy Programs
                   </a>
@@ -108,20 +109,20 @@ export default function Footer() {
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="font-medium text-primary-foreground">Online Sessions</div>
-                    <div className="text-sm">1:1 personalized learning<br />from anywhere</div>
+                    <div className="font-medium text-primary-foreground">{contact?.address?.online}</div>
+                    <div className="text-sm">{contact?.address?.description}</div>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                  <a href="tel:+1234567890" className="hover:text-primary-foreground transition-colors">
-                    +1 (234) 567-890
+                  <a href={contact?.phone?.href} className="hover:text-primary-foreground transition-colors">
+                    {contact?.phone?.display}
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent flex-shrink-0" />
-                  <a href="mailto:hello@pebblesteps.com" className="hover:text-primary-foreground transition-colors">
-                    hello@pebblesteps.com
+                  <a href={`mailto:${contact?.email?.primary}`} className="hover:text-primary-foreground transition-colors">
+                    {contact?.email?.primary}
                   </a>
                 </li>
               </ul>
@@ -135,7 +136,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 Pebble Steps. All rights reserved. | Structured Literacy Specialists
+              © {new Date().getFullYear()} {company?.name}. All rights reserved. | {company?.tagline}
             </p>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
               <Link to="/privacy" className="hover:text-primary-foreground transition-colors">

@@ -7,6 +7,8 @@ import ProgramsPage from "./pages/ProgramsPage.jsx"
 import MethodPage from "./pages/MethodPage.jsx"
 import ResultsPage from "./pages/ResultsPage.jsx"
 import AboutPage from "./pages/AboutPage.jsx"
+import ContactPage from "./pages/ContactPage.jsx"
+import AdminPage from "./pages/AdminPage.jsx"
 import GalleryPage from "./pages/GalleryPage.jsx"
 import FAQPage from "./pages/FAQPage.jsx"
 import PrivacyPage from "./pages/PrivacyPage.jsx"
@@ -23,6 +25,8 @@ export default function App() {
             <Route path="/method" element={<MethodPage />} />
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />

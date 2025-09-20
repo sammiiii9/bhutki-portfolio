@@ -81,11 +81,11 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-primary-foreground py-20">
+      <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
-            <h1 className="text-4xl lg:text-6xl font-bold">Gallery</h1>
-            <p className="text-xl lg:text-2xl max-w-3xl mx-auto opacity-90">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground">Gallery</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore our facilities, programs, and the positive impact we're making in children's lives
             </p>
           </div>

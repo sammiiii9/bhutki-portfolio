@@ -1,6 +1,7 @@
 import { Button } from "./ui/button"
+import { Link } from "react-router-dom"
 
-export default function AboutSection() {
+export default function WhyChooseUsSection() {
   const features = [
     {
       title: "Globally Certified Methods",
@@ -35,7 +36,7 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-12 bg-background">
+    <section id="why-choose-us" className="py-12 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-8">
           {/* Main Heading */}
@@ -71,9 +72,11 @@ export default function AboutSection() {
 
           {/* CTA Button */}
           <div className="pt-6">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg">
-              More About Us
-            </Button>
+            <Link to="/about">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg">
+                More About Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

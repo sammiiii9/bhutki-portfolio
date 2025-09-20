@@ -69,12 +69,12 @@ export default function Header() {
                 About
               </Link>
               <Link 
-                to="/gallery" 
+                to="/contact" 
                 className={`hover:text-primary transition-colors ${
-                  location.pathname === "/gallery" ? "text-primary font-medium" : "text-muted-foreground"
+                  location.pathname === "/contact" ? "text-primary font-medium" : "text-foreground"
                 }`}
               >
-                Gallery
+                Contact
               </Link>
             </nav>
 
@@ -112,8 +112,8 @@ export default function Header() {
                 <Link to="/about" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                   About
                 </Link>
-                <Link to="/gallery" className="text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                  Gallery
+                <Link to="/contact" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  Contact
                 </Link>
                 <div className="flex gap-2 pt-4">
                   <Button

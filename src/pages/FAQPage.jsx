@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Card, CardContent } from "../../components/ui/card"
 import { Button } from "../../components/ui/button"
 import { ChevronDown, ChevronUp, Search, Phone, Mail, MapPin } from "lucide-react"
+import { useSiteConfig } from "../hooks/useSiteConfig"
 
 const faqData = [
   {
@@ -69,6 +70,7 @@ const faqData = [
 const categories = ["All", "General", "Services", "Appointments", "Insurance", "Treatment", "Emergency", "Parents", "School", "Research"]
 
 export default function FAQPage() {
+  const { contact, businessHours } = useSiteConfig()
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchTerm, setSearchTerm] = useState("")
   const [openItems, setOpenItems] = useState(new Set())
@@ -93,11 +95,11 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-primary-foreground py-20">
+      <section className="bg-gradient-to-br from-primary/10 to-accent/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
-            <h1 className="text-4xl lg:text-6xl font-bold">Frequently Asked Questions</h1>
-            <p className="text-xl lg:text-2xl max-w-3xl mx-auto opacity-90">
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground">Frequently Asked Questions</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Find answers to common questions about our services, appointments, and programs
             </p>
           </div>
@@ -191,9 +193,9 @@ export default function FAQPage() {
                   <Phone className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Call Us</h3>
-                <p className="text-muted-foreground">Monday - Friday, 8AM - 6PM</p>
-                <a href="tel:+1234567890" className="text-primary font-semibold hover:underline">
-                  (123) 456-7890
+                <p className="text-muted-foreground">{businessHours?.weekdays?.days}, {businessHours?.weekdays?.hours}</p>
+                <a href={contact?.phone?.href} className="text-primary font-semibold hover:underline">
+                  {contact?.phone?.display}
                 </a>
               </div>
             </Card>
@@ -205,8 +207,8 @@ export default function FAQPage() {
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Email Us</h3>
                 <p className="text-muted-foreground">We'll respond within 24 hours</p>
-                <a href="mailto:info@youthmind.org" className="text-primary font-semibold hover:underline">
-                  info@youthmind.org
+                <a href={`mailto:${contact?.email?.primary}`} className="text-primary font-semibold hover:underline">
+                  {contact?.email?.primary}
                 </a>
               </div>
             </Card>

@@ -1,8 +1,11 @@
 import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
-import { Phone, FileText, Play, TrendingUp, Trophy, ArrowDown, Clock, BookOpen, Users } from "lucide-react"
+import { Link } from "react-router-dom"
+import { Phone, FileText, Play, TrendingUp, Trophy, ArrowDown, Clock, BookOpen } from "lucide-react"
+import { useSiteConfig } from "../src/hooks/useSiteConfig"
 
-export default function JourneyTimelineVisualization() {
+export default function TransformationJourneySection() {
+  const { contact } = useSiteConfig()
   const journeySteps = [
     {
       id: 1,
@@ -11,10 +14,10 @@ export default function JourneyTimelineVisualization() {
       status: "Step 1",
       description: "We listen to your concerns and conduct a preliminary assessment to understand your child's unique needs.",
       icon: Phone,
-      image: "/happy-indian-boy-and-girl-children-smiling-togethe.jpg",
+      image: "/child-psychology-assessment-session.jpg",
       features: [
         "Parent consultation about child's challenges",
-        "Quick reading & focus assessment", 
+        "Quick reading & focus assessment",
         "Learning style evaluation",
         "Goal setting discussion"
       ],
@@ -30,7 +33,7 @@ export default function JourneyTimelineVisualization() {
       status: "Step 2",
       description: "Our certified experts create a tailored learning plan based on assessment results and your child's specific needs.",
       icon: FileText,
-      image: "/happy-indian-boy-and-girl-children-smiling-togethe.jpg",
+      image: "/researchers-studying-child-brain-development-neuro.jpg",
       features: [
         "Detailed learning plan creation",
         "Methodology selection (OG/Six Bricks)",
@@ -49,7 +52,7 @@ export default function JourneyTimelineVisualization() {
       status: "Step 3",
       description: "Engaging 1:1 or small group sessions where your child learns through play, multisensory activities, and proven techniques.",
       icon: Play,
-      image: "/happy-indian-boy-and-girl-children-smiling-togethe.jpg",
+      image: "/behavior-therapy-treatment-session.jpg",
       features: [
         "Interactive online/in-person sessions",
         "Multisensory learning activities",
@@ -68,7 +71,7 @@ export default function JourneyTimelineVisualization() {
       status: "Step 4",
       description: "Regular updates keep you informed and involved, with home activities and strategies to support continued growth.",
       icon: TrendingUp,
-      image: "/happy-indian-boy-and-girl-children-smiling-togethe.jpg",
+      image: "/parent-and-child-discussing-mental-health-concerns.jpg",
       features: [
         "Weekly progress reports",
         "Home activity suggestions",
@@ -87,7 +90,7 @@ export default function JourneyTimelineVisualization() {
       status: "Step 5",
       description: "Watch your child transform from struggling learner to confident communicator with measurable improvements.",
       icon: Trophy,
-      image: "/happy-indian-boy-and-girl-children-smiling-togethe.jpg",
+      image: "/happy-diverse-young-person-smiling-outdoors-mental.jpg",
       features: [
         "Measurable skill improvements",
         "Increased confidence levels",
@@ -98,11 +101,30 @@ export default function JourneyTimelineVisualization() {
       iconColor: "bg-primary",
       borderColor: "border-primary/30",
       delay: 800
+    },
+    {
+      id: 6,
+      title: "School Partnerships",
+      duration: "Ongoing",
+      status: "Step 6",
+      description: "Collaborate with schools to enhance learning outcomes for all students through comprehensive support programs.",
+      icon: BookOpen,
+      image: "/school-refusal-support-counseling.jpg",
+      features: [
+        "Teacher Training",
+        "Curriculum Support", 
+        "Assessment Tools",
+        "Collaborative learning enhancement"
+      ],
+      bgColor: "bg-accent/10",
+      iconColor: "bg-accent",
+      borderColor: "border-accent/30",
+      delay: 1000
     }
   ]
 
   return (
-    <section id="journey" className="py-20 bg-background">
+    <section id="transformation-journey" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-8 mb-20">
@@ -123,7 +145,7 @@ export default function JourneyTimelineVisualization() {
         <div className="relative">
           {/* Vertical Timeline Line - Fixed positioning */}
           <div className="absolute left-1/2 top-0 transform -translate-x-0.5 h-full w-0.5 bg-gradient-to-b from-primary/30 via-accent/30 to-primary/30 hidden lg:block"></div>
-          
+
           {journeySteps.map((step, index) => (
             <div key={step.id} className="relative mb-16 lg:mb-24">
               {/* Desktop Layout */}
@@ -142,13 +164,13 @@ export default function JourneyTimelineVisualization() {
                             <span className="text-xs font-medium text-muted-foreground">{step.duration}</span>
                           </div>
                         </div>
-                        
+
                         <div className="mb-1">
                           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{step.status}</span>
                         </div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
                         <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{step.description}</p>
-                        
+
                         <div className="space-y-2">
                           {step.features.map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-center space-x-2">
@@ -174,7 +196,7 @@ export default function JourneyTimelineVisualization() {
                       <img
                         src={step.image}
                         alt={`Step ${step.id}: ${step.title}`}
-                        className="w-full h-64 object-cover rounded-xl shadow-lg"
+                        className="w-full h-80 object-cover rounded-xl shadow-lg"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
                       <div className={`absolute top-4 left-4 ${step.iconColor} rounded-lg p-2`}>
@@ -193,7 +215,7 @@ export default function JourneyTimelineVisualization() {
                     <img
                       src={step.image}
                       alt={`Step ${step.id}: ${step.title}`}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-56 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className={`absolute top-4 left-4 ${step.iconColor} rounded-lg p-2`}>
@@ -215,9 +237,9 @@ export default function JourneyTimelineVisualization() {
                         <span className="text-xs font-medium text-muted-foreground">{step.duration}</span>
                       </div>
                     </div>
-                    
+
                     <p className="text-muted-foreground mb-3 text-sm leading-relaxed">{step.description}</p>
-                    
+
                     <div className="grid grid-cols-1 gap-2">
                       {step.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center space-x-2">
@@ -272,16 +294,20 @@ export default function JourneyTimelineVisualization() {
                 Ready to Start Your Child's Journey?
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Book your free discovery call today and take the first step towards transformation. 
+                Book your free discovery call today and take the first step towards transformation.
                 Join hundreds of families who've seen remarkable results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  📞 +91 98765 43210
-                </Button>
-                <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg transition-all duration-300 transform hover:-translate-y-1">
-                  Free Discovery Call
-                </Button>
+                <a href={contact?.phone?.href}>
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+                    📞 {contact?.phone?.display}
+                  </Button>
+                </a>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+                    Free Discovery Call
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
