@@ -172,7 +172,7 @@ export default function ProgramsPage() {
               <img
                 src="/child-psychology-assessment-session.jpg"
                 alt="Structured Literacy Program"
-                className="w-full h-80 object-cover rounded-xl shadow-lg"
+                className="w-full h-64 object-cover rounded-xl shadow-lg"
               />
             </div>
           </div>
