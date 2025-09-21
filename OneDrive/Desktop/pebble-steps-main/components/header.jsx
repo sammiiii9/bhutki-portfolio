@@ -69,6 +69,14 @@ export default function Header() {
                 About
               </Link>
               <Link 
+                to="/tedx" 
+                className={`hover:text-primary transition-colors ${
+                  location.pathname === "/tedx" ? "text-primary font-medium" : "text-foreground"
+                }`}
+              >
+                TEDx
+              </Link>
+              <Link 
                 to="/contact" 
                 className={`hover:text-primary transition-colors ${
                   location.pathname === "/contact" ? "text-primary font-medium" : "text-foreground"
@@ -111,6 +119,9 @@ export default function Header() {
                 </Link>
                 <Link to="/about" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                   About
+                </Link>
+                <Link to="/tedx" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                  TEDx
                 </Link>
                 <Link to="/contact" className="text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                   Contact

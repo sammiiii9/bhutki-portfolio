@@ -11,6 +11,16 @@ export const siteConfig = {
         website: "https://pebblesteps.com"
     },
 
+    // Founder Information
+    founder: {
+        name: "[Founder Name]",
+        title: "Founder & CEO",
+        description: "Passionate advocate for child development and innovative therapeutic approaches. Leading the transformation of mental health support for children through evidence-based practices and cutting-edge technology.",
+        credentials: "M.A. Child Psychology, Certified Orton-Gillingham Practitioner",
+        experience: "10+ years in child development and therapeutic interventions",
+        image: "/placeholder-user.jpg"
+    },
+
     // Contact Information
     contact: {
         phone: {

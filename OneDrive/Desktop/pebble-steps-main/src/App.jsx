@@ -12,6 +12,7 @@ import AdminPage from "./pages/AdminPage.jsx"
 import GalleryPage from "./pages/GalleryPage.jsx"
 import FAQPage from "./pages/FAQPage.jsx"
 import PrivacyPage from "./pages/PrivacyPage.jsx"
+import TedxPage from "./pages/TedxPage.jsx"
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/tedx" element={<TedxPage />} />
           </Routes>
         </main>
         <Footer />
